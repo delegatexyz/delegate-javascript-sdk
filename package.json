@@ -1,0 +1,22 @@
+{
+  "name": "delegation-registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryeshrimp/delegation-registry.git"
+  },
+  "author": "ryeshrimp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryeshrimp/delegation-registry/issues"
+  },
+  "homepage": "https://github.com/ryeshrimp/delegation-registry#readme",
+  "publishConfig": {
+    "@ryeshrimp:registry": "https://npm.pkg.github.com"
+  }
+}
