@@ -28,6 +28,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-      - run: npm publish
+      - run: npm publish --access public
         env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # Use a personal access token to bypass protected branch restrictions
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
