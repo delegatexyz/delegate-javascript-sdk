@@ -1,10 +1,14 @@
 {
   "name": "delegation-registry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0"
+    "build": "npm run lint && rm -rf dist/lib && tsc",
+    "lint": "eslint . --ext .ts",
+    "test": "exit 0",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format-check": "prettier --check \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,21 @@
   "homepage": "https://github.com/ryeshrimp/delegation-registry#readme",
   "publishConfig": {
     "@ryeshrimp:registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.8.4"
   }
 }

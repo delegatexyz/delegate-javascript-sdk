@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Release
 
 on:
   release:
@@ -28,6 +28,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: npm run build
       - run: npm publish --access public
         env:
           GITHUB_TOKEN: ${{secrets.TOKEN}} # Use a personal access token to bypass protected branch restrictions
