@@ -2,7 +2,7 @@
 
 This is a minimalist frontend implemtation the delegation registry. Every function has a 1:1 name of the contract ABI.
 
-> Please note that this repository is current in beta. Right now, we built a very simple concept that doesn't require dependencies but will eventually include implementations for Ethers.js as well. Types and functions may change as we get feedback from builders. Watch out for breaking updates in the future.
+> Please note that this repository is current in beta and open to contributions.
 
 Read more about the contract here: https://github.com/0xfoobar/delegation-registry
 
@@ -13,18 +13,35 @@ You can either install it in two ways:
 **via npm / yarn**:
 
 ```
-npm: npm install web3
-yarn: yarn add web3
+npm: npm install delegation-registry
+yarn: yarn add delegation-registry
 ```
 
-via cdn
+## View Functions
 
-```
-<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js" integrity="sha512-bSQ2kf76XufUYS/4XinoHLp5S4lNOyRv0/x5UJACiOMy8ueqTNwRFfUZWmWpwnczjRp9SjiF1jrXbGEim7Y0Xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-```
+- checkDelegateForAll(delegate, vault)
+- checkDelegateForContract(delegate, vault, contract)
+- checkDelegateForToken(delegate, vault, contract, tokenId)
+- getContractLevelDelegations(vault)
+- getDelegatesForAll(vault)
+- getDelegatesForContract(vault, contract)
+- getDelegatesForToken(vault, contract, tokenId)
+- getDelegationsByDelegate(delegate)
+- getTokenLevelDelegations(vault)
 
-## How to use
+## Write Functions
 
-```
-import { checkDelegateForAll } from "delegation-registry/web3js";
-```
+- delegateForAll(delegate, value)
+- delegateForContract(delegate, contract, value)
+- delegateForToken(delegate, contract, tokenId, value)
+- revokeAllDelegates()
+- revokeDelegate(delegate)
+- revokeSelf()
+
+## Raw Functions
+
+- rawDelegateForAll(delegate, value)
+- rawDelegateForContract(delegate, contract, value)
+- rawDelegateForToken(delegate, contract, tokenId, value)
+- rawRevokeAllDelegates()
+- rawRevokeDelegate(delegate)
