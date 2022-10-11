@@ -1,12 +1,11 @@
 {
   "name": "delegation-registry",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npm run lint && rm -rf lib && tsc",
     "mypublish": "npm run build && cp package.json lib && cp README.md lib && cp LICENSE lib",
-    "postmypublish": "cd lib & npm publish --dry-run",
     "lint": "eslint . --ext .ts",
     "test": "exit 0",
     "format": "prettier --write \"src/**/*.ts\"",
