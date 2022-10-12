@@ -40,4 +40,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           cd lib
-          ls
+          npm publish
