@@ -40,6 +40,8 @@ yarn: yarn add delegation-registry
 
 ## Raw Functions
 
+These function calls will return back the encoded function data.
+
 - rawDelegateForAll(delegate, value)
 - rawDelegateForContract(delegate, contract, value)
 - rawDelegateForToken(delegate, contract, tokenId, value)

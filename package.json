@@ -1,6 +1,6 @@
 {
   "name": "delegation-registry",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryeshrimp/delegation-registry.git"
+    "url": "git+https://github.com/delegatecash/delegatecash-javascript-sdk.git"
   },
   "author": "ryeshrimp",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ryeshrimp/delegation-registry/issues"
+    "url": "https://github.com/delegatecash/delegatecash-javascript-sdk/issues"
   },
-  "homepage": "https://github.com/ryeshrimp/delegation-registry#readme",
+  "homepage": "https://github.com/delegatecash/delegatecash-javascript-sdk#readme",
   "publishConfig": {
     "@ryeshrimp:registry": "https://npm.pkg.github.com"
   },
