@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@delegatecash'
       - run: |
           npm ci
           npm run mypublish
