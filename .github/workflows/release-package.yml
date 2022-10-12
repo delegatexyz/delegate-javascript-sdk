@@ -33,8 +33,8 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: | 
-        npm ci
-        npm run mypublish
+          npm ci
+          npm run mypublish
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
