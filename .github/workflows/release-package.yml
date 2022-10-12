@@ -28,11 +28,9 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: | 
+        node-version: '16.x'
+        registry-url: 'https://npm.pkg.github.com'
+      - run: |
           npm ci
           npm run mypublish
       - name: Publish

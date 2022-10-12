@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delegatecash/delegatecash-javascript-sdk.git"
+    "url": "https://github.com/delegatecash/delegatecash-javascript-sdk.git"
   },
   "author": "delegatecash",
   "license": "MIT",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/delegatecash/delegatecash-javascript-sdk#readme",
   "publishConfig": {
-    "@ryeshrimp:registry": "https://npm.pkg.github.com"
+    "registry":"https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@types/node": "^18.8.0",
