@@ -1,5 +1,5 @@
 {
-  "name": "delegation-registry",
+  "name": "delegatecash",
   "version": "0.1.2",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/delegatecash/delegatecash-javascript-sdk.git"
   },
-  "author": "ryeshrimp",
+  "author": "delegatecash",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/delegatecash/delegatecash-javascript-sdk/issues"
