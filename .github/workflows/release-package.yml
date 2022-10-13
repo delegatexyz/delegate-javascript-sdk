@@ -32,13 +32,11 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@delegatecash'
       - run: |
           npm ci
           npm run mypublish
       - name: Publish
+        working-directory: ./lib
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          cd lib
-          npm publish
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: npm publish
