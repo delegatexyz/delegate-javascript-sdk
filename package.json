@@ -1,6 +1,6 @@
 {
-  "name": "delegation-registry",
-  "version": "0.1.2",
+  "name": "delegatecash",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,17 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delegatecash/delegatecash-javascript-sdk.git"
+    "url": "https://github.com/delegatecash/delegatecash-javascript-sdk.git"
   },
-  "author": "ryeshrimp",
+  "author": "delegatecash",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/delegatecash/delegatecash-javascript-sdk/issues"
   },
   "homepage": "https://github.com/delegatecash/delegatecash-javascript-sdk#readme",
-  "publishConfig": {
-    "@ryeshrimp:registry": "https://npm.pkg.github.com"
-  },
   "devDependencies": {
     "@types/node": "^18.8.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
