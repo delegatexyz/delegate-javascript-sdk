@@ -21,9 +21,6 @@
     "url": "https://github.com/delegatecash/delegatecash-javascript-sdk/issues"
   },
   "homepage": "https://github.com/delegatecash/delegatecash-javascript-sdk#readme",
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "devDependencies": {
     "@types/node": "^18.8.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
