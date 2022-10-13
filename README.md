@@ -1,4 +1,4 @@
-# delegation-registry
+# delegatecash
 
 This is a minimalist frontend implemtation the delegation registry. Every function has a 1:1 name of the contract ABI.
 
@@ -13,8 +13,8 @@ You can either install it in two ways:
 **via npm / yarn**:
 
 ```
-npm: npm install delegation-registry
-yarn: yarn add delegation-registry
+npm: npm install delegatecash
+yarn: yarn add delegatecash
 ```
 
 ## View Functions
