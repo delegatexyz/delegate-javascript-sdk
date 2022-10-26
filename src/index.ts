@@ -2,10 +2,17 @@ import { ethers } from 'ethers';
 import { ADDRESS, ABI } from './constants';
 import { getProvider, getDelegationType } from './utils';
 
-const provider = getProvider();
-const signer = provider.getSigner();
-const delegationInterface = new ethers.utils.Interface(ABI);
-const delegationContract = new ethers.Contract(ADDRESS, ABI, provider);
+let provider, signer, delegationInterface, delegationContract;
+
+try {
+  provider = getProvider();
+  signer = provider.getSigner();
+  delegationInterface = new ethers.utils.Interface(ABI);
+  delegationContract = new ethers.Contract(ADDRESS, ABI, provider);
+}
+catch {
+  console.log("No signer found");
+}
 
 // READS
 export const checkDelegateForAll = async (delegate: string, vault: string): Promise<boolean> => {
