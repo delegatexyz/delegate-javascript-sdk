@@ -100,9 +100,8 @@ export const revokeDelegate = async (delegate: string) => {
   return await delegationContract.connect(signer).revokeDelegate(delegate);
 };
 
-export const revokeSelf = async () => {
-  const self = await signer.getAddress();
-  return await delegationContract.connect(signer).revokeSelf(self);
+export const revokeSelf = async (vault: string) => {
+  return await delegationContract.connect(signer).revokeSelf(vault);
 };
 
 // RAW

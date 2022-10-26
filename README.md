@@ -36,7 +36,7 @@ yarn: yarn add delegatecash
 - delegateForToken(delegate, contract, tokenId, value)
 - revokeAllDelegates()
 - revokeDelegate(delegate)
-- revokeSelf()
+- revokeSelf(vault)
 
 ## Raw Functions
 
