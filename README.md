@@ -1,4 +1,4 @@
-# delegatecash
+# [delegatecash](https://delegate.cash) &middot; ![NPM](https://img.shields.io/npm/l/delegatecash?registry_uri=https%3A%2F%2Fregistry.npmjs.com) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) ![npm bundle size](https://img.shields.io/bundlephobia/min/delegatecash) ![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fdelegatecash)
 
 This is a minimalist frontend implemtation the delegation registry. Every function has a 1:1 name of the contract ABI.
 
