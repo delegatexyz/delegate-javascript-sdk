@@ -2,19 +2,12 @@
 
 This is a minimalist frontend implemtation the delegation registry. Every function has a 1:1 name of the contract ABI.
 
-> Please note that this repository is current in beta and open to contributions.
-
-Read more about the contract here: https://github.com/0xfoobar/delegation-registry
+Read more about the [delegate.cash](https://delegate.cash) via our [documentation].(https://docs.delegate.cash)
 
 ## Installation
 
-You can either install it in two ways:
-
-**via npm / yarn**:
-
 ```
-npm: npm install delegatecash
-yarn: yarn add delegatecash
+npm install delegatecash
 ```
 
 ## View Functions
