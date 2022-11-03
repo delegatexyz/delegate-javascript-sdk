@@ -2,7 +2,7 @@
 
 This is a minimalist frontend implemtation the delegation registry. Every function has a 1:1 name of the contract ABI.
 
-Read more about the [delegate.cash](https://delegate.cash) via our [documentation].(https://docs.delegate.cash)
+Read more about the [delegate.cash](https://delegate.cash) via our [documentation](https://docs.delegate.cash)
 
 ## Installation
 
