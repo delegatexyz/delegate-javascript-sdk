@@ -5,7 +5,7 @@ export const getDelegationType = (key: number) => {
   return types[key] || 'NONE';
 };
 
-export const getProvider = (): ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider => {
+export const getDefaultProvider = (): ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider => {
   
   if (typeof process !== 'undefined' && process.env?.PROVIDER_URL)
     return new ethers.providers.JsonRpcProvider(process.env.PROVIDER_URL);

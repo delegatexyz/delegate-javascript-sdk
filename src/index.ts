@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import { ADDRESS, ABI } from './constants';
-import { getProvider, getDelegationType } from './utils';
+import { getDefaultProvider, getDelegationType } from './utils';
 
 const delegationInterface = new ethers.utils.Interface(ABI);
 
@@ -12,7 +12,7 @@ export const DelegateCash = class {
 
   constructor(provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider = null) {
     
-    this.provider = getProvider();
+    this.provider = getDefaultProvider();
     this.signer = null;
 
     if(provider) {
