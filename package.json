@@ -1,8 +1,9 @@
 {
   "name": "delegatecash",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npm run lint && rm -rf lib && tsc",
     "mypublish": "npm run build && cp package.json lib && cp README.md lib && cp LICENSE lib",
