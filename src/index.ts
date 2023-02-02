@@ -1,21 +1,19 @@
 import { ethers } from 'ethers';
-import { ADDRESS, ABI } from './constants';
-import { getDefaultProvider, getDelegationType } from './utils';
+import { ADDRESS, ABI } from './constants.js';
+import { getDefaultProvider, getDelegationType } from './utils.js';
 
 const delegationInterface = new ethers.utils.Interface(ABI);
 
 export const DelegateCash = class {
-
   provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider;
   signer: ethers.Signer;
   delegationContract: ethers.Contract;
 
   constructor(provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider = null) {
-    
     this.provider = getDefaultProvider();
     this.signer = null;
 
-    if(provider) {
+    if (provider) {
       this.provider = provider;
       this.signer = this.provider.getSigner();
     }
@@ -66,7 +64,13 @@ export const DelegateCash = class {
   getDelegationsByDelegate = async (
     delegate: string,
   ): Promise<
-    { type: 'NONE' | 'ALL' | 'CONTRACT' | 'TOKEN'; vault: string; delegate: string; contract: string; tokenId: number }[]
+    {
+      type: 'NONE' | 'ALL' | 'CONTRACT' | 'TOKEN';
+      vault: string;
+      delegate: string;
+      contract: string;
+      tokenId: number;
+    }[]
   > => {
     const delegations = await this.delegationContract.callStatic.getDelegationsByDelegate(delegate);
     return delegations.map((d) => {
