@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
+    "module": "ES6",
+    "target": "ES5",
     "lib": ["ES2020"],
     "declaration": true,
     "outDir": "./lib",
