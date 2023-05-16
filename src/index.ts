@@ -4,18 +4,26 @@ import { getDefaultProvider, getDelegationType } from './utils.js';
 
 const delegationInterface = new ethers.utils.Interface(ABI);
 
+function getSigner(provider: any): ethers.Signer | null {
+  try {
+    return provider.getSigner();
+  } catch {
+    return null;
+  }
+}
+
 export const DelegateCash = class {
-  provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider;
+  provider: ethers.providers.Provider;
   signer: ethers.Signer;
   delegationContract: ethers.Contract;
 
-  constructor(provider: ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider = null) {
+  constructor(provider: ethers.providers.Provider = null) {
     this.provider = getDefaultProvider();
     this.signer = null;
 
     if (provider) {
       this.provider = provider;
-      this.signer = this.provider.getSigner();
+      this.signer = getSigner(provider);
     }
 
     this.delegationContract = new ethers.Contract(ADDRESS, ABI, this.provider);
