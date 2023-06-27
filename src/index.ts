@@ -28,7 +28,8 @@ export const DelegateCash = class {
       if (providerType === 'ethers') this.provider = provider as ethers.providers.Provider;
       if (providerType === 'web3')
         this.provider = new ethers.providers.Web3Provider(provider as ethers.providers.ExternalProvider);
-      this.signer = getSigner(provider);
+
+      this.signer = getSigner(this.provider);
     }
 
     this.delegationContract = new ethers.Contract(ADDRESS, ABI, this.provider);
