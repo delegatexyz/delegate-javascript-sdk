@@ -17,12 +17,17 @@ export const DelegateCash = class {
   signer: ethers.Signer;
   delegationContract: ethers.Contract;
 
-  constructor(provider: ethers.providers.Provider = null) {
+  constructor(
+    provider: ethers.providers.Provider | ethers.providers.ExternalProvider = null,
+    providerType: 'ethers' | 'web3' = 'ethers',
+  ) {
     this.provider = getDefaultProvider();
-    this.signer = null;
+    this.signer = getSigner(this.provider);
 
     if (provider) {
-      this.provider = provider;
+      if (providerType === 'ethers') this.provider = provider as ethers.providers.Provider;
+      if (providerType === 'web3')
+        this.provider = new ethers.providers.Web3Provider(provider as ethers.providers.ExternalProvider);
       this.signer = getSigner(provider);
     }
 
