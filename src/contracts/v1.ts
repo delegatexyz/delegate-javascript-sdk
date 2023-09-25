@@ -1,4 +1,4 @@
-export const ADDRESS = '0x00000000000076a84fef008cdabe6409d2fe638b';
+export const ADDRESS: `0x${string}` = '0x00000000000076a84fef008cdabe6409d2fe638b';
 export const ABI = [
   {
     anonymous: false,
@@ -219,4 +219,4 @@ export const ABI = [
     stateMutability: 'view',
     type: 'function',
   },
-];
+] as const;
