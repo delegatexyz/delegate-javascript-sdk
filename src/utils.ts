@@ -1,20 +1,20 @@
-import { ethers } from 'ethers';
+import { hexToString, stringToHex } from 'viem';
 
-export const getDelegationType = (key: number) => {
+export const getV1DelegationType = (key: number) => {
   const types = ['NONE', 'ALL', 'CONTRACT', 'TOKEN'];
   return types[key] || 'NONE';
 };
 
-export const getDefaultProvider = (): ethers.providers.Web3Provider | ethers.providers.JsonRpcProvider => {
-  
-  if (typeof process !== 'undefined' && process.env?.PROVIDER_URL)
-    return new ethers.providers.JsonRpcProvider(process.env.PROVIDER_URL);
-  
-    // @ts-ignore
-  if (typeof window !== 'undefined' && window.ethereum) {
-    // @ts-ignore
-    return new ethers.providers.Web3Provider(window.ethereum);
-  }
+export const getV2DelegationType = (key: number) => {
+  const types = ['NONE', 'ALL', 'CONTRACT', 'ERC721', 'ERC20', 'ERC1155'];
+  return types[key] || 'NONE';
+};
 
-  return null;
+export const rightsToHex = (rights: string = ''): `0x${string}` => {
+  return stringToHex(rights, { size: 32 });
+};
+
+export const hexToRights = (rights: `0x${string}`): string => {
+  const str = hexToString(rights, { size: 32 });
+  return str.replace(/\0/g, '');
 };
