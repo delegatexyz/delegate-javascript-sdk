@@ -33,7 +33,7 @@ export const DelegateV2 = class {
     abi: ABI,
   };
 
-  constructor(chain: Chain = mainnet, userTransport: Transport = http(), account?: Account | Address) {
+  constructor(userTransport: Transport = http(), chain: Chain = mainnet, account?: Account | Address) {
     this.publicClient = createPublicClient({
       chain,
       transport: userTransport,

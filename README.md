@@ -14,8 +14,8 @@ npm install delegatecash viem
 
 The v1 or v2 SDK require the same parameters:
 
-- **chain**: [chain](https://viem.sh/docs/glossary/terms.html#chain) from `viem/chains` (or [define your own](https://viem.sh/docs/clients/chains.html#custom-chains))
 - **transport**: a valid viem [Transport](https://viem.sh/docs/clients/intro.html#transports).
+- **chain (optional)**: [chain](https://viem.sh/docs/glossary/terms.html#chain) from `viem/chains` (or [define your own](https://viem.sh/docs/clients/chains.html#custom-chains)). Defaults to `mainnet`
 - **account (optional)**: A [wallet client](https://viem.sh/docs/clients/wallet.html)
 
 _`account` is only required to use the write functions_.
@@ -24,11 +24,10 @@ _`account` is only required to use the write functions_.
 
 ```
 import { http } from "viem"
-import { mainnet } from "viem/chains";
 import { DelegateV1, DelegateV2 } from "delegatecash";
 
-const v1 = new DelegateV1(mainnet, http())
-const v2 = new DelegateV2(mainnet, http())
+const v1 = new DelegateV1(http())
+const v2 = new DelegateV2(http())
 
 console.log(await v1.checkDelegateForAll("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"))
 
@@ -50,8 +49,8 @@ const account = createWalletClient({
   transport: custom(window.ethereum)
 })
 
-const v1 = new DelegateV1(mainnet, http(), account)
-const v2 = new DelegateV2(mainnet, http(), account)
+const v1 = new DelegateV1(http(), mainnet, account)
+const v2 = new DelegateV2(http(), mainnet, account)
 
 console.log(await v1.delegateForAll("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"))
 
