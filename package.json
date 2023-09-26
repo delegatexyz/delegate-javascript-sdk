@@ -1,9 +1,9 @@
 {
-  "name": "delegatecash",
+  "name": "@delegatexyz/sdk",
   "version": "0.5.0",
   "description": "",
-  "main": "lib/index.cjs",
-  "module": "lib/index.esm.js",
+  "main": "index.cjs",
+  "module": "index.esm.js",
   "type": "module",
   "scripts": {
     "build": "npm run lint && rm -rf lib && rollup -c",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/delegatecash/delegatecash-javascript-sdk.git"
+    "url": "https://github.com/delegatexyz/delegate-javascript-sdk.git"
   },
-  "author": "delegatecash",
+  "author": "delegatexyz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/delegatecash/delegatecash-javascript-sdk/issues"
+    "url": "https://github.com/delegatexyz/delegate-javascript-sdk/issues"
   },
-  "homepage": "https://github.com/delegatecash/delegatecash-javascript-sdk#readme",
+  "homepage": "https://github.com/delegatexyz/delegate-javascript-sdk#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.1",
     "@types/node": "^20.6.3",
