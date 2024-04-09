@@ -1,6 +1,6 @@
 {
   "name": "@delegatexyz/sdk",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "",
   "main": "index.cjs",
   "module": "index.esm.js",
@@ -40,6 +40,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "viem": "^1.12.2"
+    "viem": "^2.9.13"
   }
 }
