@@ -16,47 +16,65 @@ The v1 or v2 SDK require the same parameters:
 
 - **transport**: a valid viem [Transport](https://viem.sh/docs/clients/intro.html#transports).
 - **chain**: [chain](https://viem.sh/docs/glossary/terms.html#chain) from `viem/chains` (or [define your own](https://viem.sh/docs/clients/chains.html#custom-chains))
+- **isZkSync (optional)**: boolean to indicate if the chain is zkSync (v2 only, defaults to false)
 - **account (optional)**: A [wallet client](https://viem.sh/docs/clients/wallet.html)
 
 _`account` is only required to use the write functions_.
 
 ### Read Example
 
-```
-import { http } from "viem"
-import { DelegateV1, DelegateV2 } from "delegatecash";
+```ts
+import { http } from 'viem';
+import { DelegateV1, DelegateV2 } from '@delegatexyz/sdk';
 
-const RPC_URL = "";
-const v1 = new DelegateV1(http(RPC_URL))
-const v2 = new DelegateV2(http(RPC_URL))
+const RPC_URL = 'https://ethereum-rpc.publicnode.com';
+const v1 = new DelegateV1(http(RPC_URL));
+const v2 = new DelegateV2({ userTransport: http(RPC_URL) });
 
-console.log(await v1.checkDelegateForAll("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"))
+console.log(
+  await v1.checkDelegateForAll(
+    '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+  ),
+);
 
-console.log(await v2.checkDelegateForAll("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"))
-
+console.log(
+  await v2.checkDelegateForAll(
+    '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+  ),
+);
 ```
 
 ### Write Example
 
 To write transactions, you'll need to pass a [wallet client](https://viem.sh/docs/clients/wallet.html).
 
-```
-import { http } from "viem"
-import { mainnet } from "viem/chains";
-import { DelegateV1, DelegateV2 } from "delegatecash";
+```ts
+import { http } from 'viem';
+import { mainnet } from 'viem/chains';
+import { DelegateV1, DelegateV2 } from '@delegatexyz/sdk';
 
 const account = createWalletClient({
   chain: mainnet,
-  transport: custom(window.ethereum)
-})
+  transport: custom(window.ethereum),
+});
 
-const v1 = new DelegateV1(http(), mainnet, account)
-const v2 = new DelegateV2(http(), mainnet, account)
+const RPC_URL = 'https://ethereum-rpc.publicnode.com';
+const v1 = new DelegateV1(http(), mainnet, account);
+const v2 = new DelegateV2({ userTransport: http(RPC_URL), chain: mainnet, account });
 
-console.log(await v1.delegateForAll("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"))
+console.log(
+  await v1.delegateForAll('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266', '0x70997970C51812dc3A010C7d01b50e0d17dc79C8'),
+);
 
-console.log(await v2.delegateAll("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", "0x70997970C51812dc3A010C7d01b50e0d17dc79C8", true))
-
+console.log(
+  await v2.delegateAll(
+    '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+    true,
+  ),
+);
 ```
 
 ## API
