@@ -1,5 +1,3 @@
-import { hexToString, stringToHex } from 'viem';
-
 export const getV1DelegationType = (key: number) => {
   const types = ['NONE', 'ALL', 'CONTRACT', 'TOKEN'];
   return types[key] || 'NONE';
@@ -10,11 +8,4 @@ export const getV2DelegationType = (key: number) => {
   return types[key] || 'NONE';
 };
 
-export const rightsToHex = (rights: string = ''): `0x${string}` => {
-  return stringToHex(rights, { size: 32 });
-};
-
-export const hexToRights = (rights: `0x${string}`): string => {
-  const str = hexToString(rights, { size: 32 });
-  return str.replace(/\0/g, '');
-};
+export const EMPTY_RIGHTS = '0x0000000000000000000000000000000000000000000000000000000000000000';
