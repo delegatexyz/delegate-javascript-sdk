@@ -15,7 +15,7 @@ npm install @delegatexyz/sdk viem
 The v1 or v2 SDK require the same parameters:
 
 - **transport**: a valid viem [Transport](https://viem.sh/docs/clients/intro.html#transports).
-- **chain**: [chain](https://viem.sh/docs/glossary/terms.html#chain) from `viem/chains` (or [define your own](https://viem.sh/docs/clients/chains.html#custom-chains))
+- **chain**: [chain](https://viem.sh/docs/glossary/terms.html#chain) from `viem/chains` (or [define your own](https://viem.sh/docs/clients/chains.html#custom-chains)) — the registry is deployed at the same address on [every supported chain](https://github.com/delegatexyz/delegate-registry#finalized-deployment)
 - **isZkSync (optional)**: boolean to indicate if the chain is zkSync (v2 only, defaults to false)
 - **account (optional)**: A [wallet client](https://viem.sh/docs/clients/wallet.html)
 
